@@ -1,0 +1,60 @@
+
+* {
+  font-family: Oswald;
+  font-size: xx-large;
+}
+
+body {
+  background-color: rgb(8, 8, 65);
+}
+
+#title {
+  text-align: center;
+  color: red;
+}
+
+#calculate-button {
+  color: antiquewhite;
+  background-color: red;
+}
+
+#output {
+  text-align: center;
+  color: lightseagreen;
+}
+
+input, label, row {
+  display:block;
+}
+
+.container {
+  width: 700px;
+}
+
+#weightContainer {
+  color: lightseagreen;
+  float: left;
+}
+
+#planetContainer {
+  color: lightseagreen;
+  float: right;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+select{
+  width: 200px;
+  height: 54px;
+  padding: 5px;
+  color: gray;
+}
+
+#user-weight {
+  color: gray;
+}
