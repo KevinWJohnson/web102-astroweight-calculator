@@ -19,7 +19,7 @@
     
 ### Demonstrates
 * HTML
-* Javascript
+* JavaScript
 * Unit Testing with Mocha
 
 ### Authors
