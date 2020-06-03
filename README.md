@@ -26,4 +26,4 @@
 Michael Roberts, Kevin Johnson
 
 ### Try the app on GitHub!
-[Click here to try *Astro Weigh Calculator* for yourself!](https://kevinwjohnson.github.io/web102-astroweight-calculator/)
+[Click here to try *Astro Weight Calculator* for yourself!](https://kevinwjohnson.github.io/web102-astroweight-calculator/)
