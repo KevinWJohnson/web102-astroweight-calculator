@@ -18,13 +18,18 @@ planets.reverse();
 
 var planetMap = new Map(planets);
 
+var planetSelection = document.getElementById('planets');
+
 // Populate the dropdown element with data found in the planets array
 planets.forEach(planet => {
     var node = document.createElement('option');
     node.textContent = planet[0];
     node.value = planet[0];
-    document.getElementById('planets').appendChild(node);
+    planetSelection.appendChild(node);
 });
+
+// Create the Pluto Option
+createPlutoOption();
 
 // Function to caluculate the correct weight
 function calculateWeight(weight, planetName) {
@@ -37,7 +42,7 @@ function handleClickEvent(e) {
     let userWeight = document.getElementById('user-weight').value;
 
    // A variable called planetName with the name of the selected planet from the drop down.
-   let planetIndex = document.getElementById('planets').selectedIndex;
+   let planetIndex = planetSelection.selectedIndex;
    let planetName = document.getElementsByTagName('option')[planetIndex].value;
 
    // A variable called result with the value of the new calculated weight.
@@ -50,3 +55,48 @@ function handleClickEvent(e) {
 
 // Set the #calculate-button element's onclick method to use the handleClickEvent function.
 document.getElementById('calculate-button').onclick = handleClickEvent;
+
+function createPlutoOption() {
+    var plutoOption = document.getElementById('pluto-option');
+
+    var plutoCheckbox = document.createElement('input');
+    plutoCheckbox.type= 'checkbox';
+    plutoCheckbox.id = 'pluto-checkbox';
+
+    var plutoCheckboxLabel = document.createElement('label');
+    plutoCheckboxLabel.innerHTML = 'Remove Pluto?';
+
+    plutoOption.appendChild(plutoCheckbox);
+    plutoOption.appendChild(plutoCheckboxLabel);
+}
+
+// Set the #pluto-checkbox element's onchange method to use the handleChangeEvent function.
+var plutoCheckboxOption = document.getElementById('pluto-checkbox');
+plutoCheckboxOption.onchange = handleChangeEvent;
+
+function handleChangeEvent(e) {
+    if(plutoCheckboxOption.checked === true) {
+        removePluto();
+    } else {
+        addPluto();
+    }
+}
+
+function removePluto() {
+    var removePlanet = 'Pluto';
+    
+    for (var i = 0; i < planets.length; i++) {
+        var name = planetSelection[i].innerHTML;
+        if(name === removePlanet) {
+            planetSelection.removeChild(planetSelection.childNodes[i]);
+
+        }
+    }
+}
+
+function addPluto() {
+    var node = document.createElement('option');
+    node.textContent = 'Pluto';
+    node.value = 'Pluto';
+    planetSelection.appendChild(node);
+}
