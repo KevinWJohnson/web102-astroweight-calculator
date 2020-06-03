@@ -16,23 +16,38 @@ var planets = [
 
 planets.reverse();
 
-var planetMap = new Map(planets);
+// var planetMap = new Map(planets);
 
 var planetSelection = document.getElementById('planets');
 
+
 // Populate the dropdown element with data found in the planets array
-planets.forEach(planet => {
-    var node = document.createElement('option');
-    node.textContent = planet[0];
-    node.value = planet[0];
-    planetSelection.appendChild(node);
-});
+function populateSelectPlanet() {
+    planets.forEach(planet => {
+        var node = document.createElement('option');
+        node.textContent = planet[0];
+        node.value = planet[0];
+        planetSelection.appendChild(node);
+    });
+}
+
+// Remove every item from the dropdown box
+function removeItemsSelectPlanet() {
+    while (planetSelection.firstChild) {
+        planetSelection.removeChild(planetSelection.firstChild);
+    }
+}
+
+// Call the function that populates the dropdown element with data found in the planets array
+populateSelectPlanet();
 
 // Create the Pluto Option
 createPlutoOption();
 
+
 // Function to caluculate the correct weight
 function calculateWeight(weight, planetName) {
+    var planetMap = new Map(planets);
     return weight * planetMap.get(planetName);
 }
 
@@ -44,7 +59,6 @@ function handleClickEvent(e) {
    // A variable called planetName with the name of the selected planet from the drop down.
    let planetIndex = planetSelection.selectedIndex;
    let planetName = document.getElementsByTagName('option')[planetIndex].value;
-
    // A variable called result with the value of the new calculated weight.
    let result = calculateWeight(userWeight, planetName);
 
@@ -84,12 +98,13 @@ function handleChangeEvent(e) {
 
 function removePluto() {
     var removePlanet = 'Pluto';
-    
     for (var i = 0; i < planets.length; i++) {
+        if(planetSelection.childNodes[i] === undefined) {
+            break;
+        }
         var name = planetSelection[i].innerHTML;
         if(name === removePlanet) {
             planetSelection.removeChild(planetSelection.childNodes[i]);
-
         }
     }
 }
@@ -100,3 +115,25 @@ function addPluto() {
     node.value = 'Pluto';
     planetSelection.appendChild(node);
 }
+
+function addPlanet() {
+    var addPlanetName = document.getElementById('add-planet-name').value;
+    addPlanetName = capitalizeFirstLetter(addPlanetName);
+    var addPlanetMultiplier = document.getElementById('add-planet-multiplier').value;
+    addPlanetMultiplier = parseFloat(addPlanetMultiplier);
+    var newPlanet = [addPlanetName, addPlanetMultiplier];
+    if(addPlanetName !='' && addPlanetMultiplier != '') {
+        var newPlanet = [addPlanetName, addPlanetMultiplier];
+        planets.push(newPlanet);
+        removeItemsSelectPlanet();
+        populateSelectPlanet();
+    }
+
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
+}
+
+// Set the #added-planet-button element's onclick method to use the addPlanet function.
+document.getElementById('added-planet-button').onclick = addPlanet;

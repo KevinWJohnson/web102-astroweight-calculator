@@ -13,7 +13,17 @@ body {
   color: red;
 }
 
+#add-planet-section {
+  text-align: center;
+  color: red;
+}
+
 #calculate-button {
+  color: antiquewhite;
+  background-color: red;
+}
+
+#added-planet-button {
   color: antiquewhite;
   background-color: red;
 }
@@ -28,10 +38,15 @@ input, label, row {
 }
 
 .container {
-  width: 700px;
+  width: 750px;
 }
 
 #weightContainer {
+  color: lightseagreen;
+  float: left;
+}
+
+#add-planet-name-container {
   color: lightseagreen;
   float: left;
 }
@@ -40,6 +55,12 @@ input, label, row {
   color: lightseagreen;
   float: right;
 }
+
+#add-planet-multiplier-container {
+  color: lightseagreen;
+  float: right;
+}
+
 
 .center {
   display: flex;
@@ -50,6 +71,13 @@ input, label, row {
 
 select{
   width: 200px;
+  height: 54px;
+  padding: 5px;
+  color: gray;
+}
+
+input{
+  width: 350px;
   height: 54px;
   padding: 5px;
   color: gray;

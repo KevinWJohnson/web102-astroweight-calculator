@@ -27,12 +27,32 @@
         </div>
 
         <br style="clear:both;" />
-          <p id="output"></p>
+        <p id="output"></p>
         <div class="center">
           <button id="calculate-button">Calculate!</button>
         </div>
         <br />
         <div id="pluto-option"></div>
+        <br />
+        <p id="add-planet-section">Add an another planet to the list:</p>
+        <div class="row">
+          <div class="col-6">
+            <div id="add-planet-name-container">
+              <label for="add-planet-name">Enter the planet's name:</label> 
+              <input id="add-planet-name" type="text" placeholder="Planet Name" />
+            </div>
+          </div>
+          <div class="col-6">
+            <div id="add-planet-multiplier-container">
+              <label for="add-planet-multiplier">Enter the planet's multiplier:</label>
+              <input id="add-planet-multiplier" type="number" placeholder="Conversion Multiplier"></input>
+            </div>
+          </div>
+        </div>
+        <br style="clear:both;" />
+        <div class="center">
+          <button id="added-planet-button">Add Planet to Dropdown List</button>
+        </div>
     </div>
 
     <script src="main.js" charset="utf-8"></script>
