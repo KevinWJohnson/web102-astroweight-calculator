@@ -6,7 +6,7 @@
 ### Overview
 
 * The Astro Weigh Calculator allows you to calculate weight on different planets.
-* Use can remove and add Pluto from the dropdown box.
+* You can remove and add Pluto from the dropdown box.
 
     Astro Weigh Calculator:
     ![Astro Weigh Calculator](/assets/images/CalculateWeight.JPG)
