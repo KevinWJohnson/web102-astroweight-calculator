@@ -18,7 +18,7 @@
     
     
 ### Demonstrates
-* HTMl
+* HTML
 * Javascript
 * Unit Testing with Mocha
 
